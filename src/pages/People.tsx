@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PageBreadcrumb from "../components/common/PageBreadCrumb";
+
 import Button from "../components/ui/button/Button";
 import Input from "../components/form/input/InputField";
 import MultiSelect from "../components/form/MultiSelect";
@@ -512,7 +512,7 @@ export default function People() {
 
   return (
     <div className="p-6 space-y-6">
-      <PageBreadcrumb pageTitle="People" />
+    
       
       {/* Compact Header with Actions and View Toggle */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

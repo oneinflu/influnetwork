@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PageBreadcrumb from "../components/common/PageBreadCrumb";
+
 import RateCardsTable from "../components/tables/RateCardsTable";
 import { RateCard } from "../types/rateCard";
 
@@ -150,7 +150,7 @@ export default function RateCards() {
 
   return (
     <div className="p-6">
-      <PageBreadcrumb pageTitle="Rate Cards" />
+   
       <RateCardsTable
         rateCards={rateCards}
         onAddRateCard={handleAddRateCard}

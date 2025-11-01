@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PageBreadcrumb from "../components/common/PageBreadCrumb";
+
 import InvoicesTable from "../components/tables/InvoicesTable";
 import PaymentHistoryTable from "../components/tables/PaymentHistoryTable";
 import InvoiceFormModal from "../components/modals/InvoiceFormModal";
@@ -200,7 +200,7 @@ export default function InvoicesPayments() {
 
   return (
     <div className="p-6 space-y-6">
-      <PageBreadcrumb pageTitle="Invoices & Payments" />
+    
       
       {/* Header Section */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
