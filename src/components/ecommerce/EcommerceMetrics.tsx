@@ -4,7 +4,7 @@ import {
   BoltIcon,
   DollarLineIcon,
   GroupIcon,
-  ShootingStarIcon,
+ 
   DocsIcon,
   CheckCircleIcon,
   TimeIcon,

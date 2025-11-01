@@ -4,7 +4,7 @@ import Button from "../ui/button/Button";
 import { 
   ChevronUpIcon, 
   ChevronDownIcon,
-  MailIcon,
+  
   PlusIcon,
   EyeIcon,
   MoreDotIcon,
@@ -135,10 +135,10 @@ const PeopleTable: React.FC<PeopleTableProps> = ({
     const metrics = person.platformMetrics;
     let total = 0;
     
-    if (metrics.Instagram?.followers) total += metrics.Instagram.followers;
-    if (metrics.YouTube?.followers) total += metrics.YouTube.followers;
-    if (metrics.TikTok?.followers) total += metrics.TikTok.followers;
-    if (metrics.LinkedIn?.followers) total += metrics.LinkedIn.followers;
+    if (metrics.instagram?.followers) total += metrics.instagram.followers;
+    if (metrics.youtube?.subscribers) total += metrics.youtube.subscribers;
+    if (metrics.tiktok?.followers) total += metrics.tiktok.followers;
+    if (metrics.linkedin?.connections) total += metrics.linkedin.connections;
     
     return total;
   };
@@ -147,11 +147,13 @@ const PeopleTable: React.FC<PeopleTableProps> = ({
     const platforms: string[] = [];
     const metrics = person.platformMetrics;
     
-    if (metrics.Instagram?.followers) platforms.push('Instagram');
-    if (metrics.YouTube?.followers) platforms.push('YouTube');
-    if (metrics.TikTok?.followers) platforms.push('TikTok');
-    if (metrics.LinkedIn?.followers) platforms.push('LinkedIn');
-    if (person.socialLinks.some(link => link.platform === 'Offline')) platforms.push('Offline');
+    if (metrics.instagram?.followers) platforms.push('Instagram');
+    if (metrics.youtube?.subscribers) platforms.push('YouTube');
+    if (metrics.tiktok?.followers) platforms.push('TikTok');
+    if (metrics.linkedin?.connections) platforms.push('LinkedIn');
+    if (person.socialLinks.instagram || person.socialLinks.youtube || person.socialLinks.tiktok || person.socialLinks.linkedin) {
+      // Platform already added above
+    }
     
     return platforms;
   };
@@ -321,14 +323,11 @@ const PeopleTable: React.FC<PeopleTableProps> = ({
               {/* Rate Card */}
               <td className="py-3 px-4">
                 <div className="text-center">
-                  {person.rateCards && person.rateCards.length > 0 ? (
+                  {person.defaultRateCardId ? (
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onQuickAction('rate-card', person.id);
-                      }}
+                      onClick={() => onQuickAction('rate-card', person.id)}
                     >
                       View
                     </Button>
@@ -387,7 +386,6 @@ const PeopleTable: React.FC<PeopleTableProps> = ({
                     variant="outline"
                     size="sm"
                     onClick={() => onQuickAction('message', person.id)}
-                    title="Message"
                   >
                     <PaperPlaneIcon className="w-4 h-4" />
                   </Button>
@@ -395,7 +393,6 @@ const PeopleTable: React.FC<PeopleTableProps> = ({
                     variant="outline"
                     size="sm"
                     onClick={() => onQuickAction('add-to-campaign', person.id)}
-                    title="Add to Campaign"
                   >
                     <PlusIcon className="w-4 h-4" />
                   </Button>
@@ -403,7 +400,6 @@ const PeopleTable: React.FC<PeopleTableProps> = ({
                     variant="outline"
                     size="sm"
                     onClick={() => onQuickAction('view-profile', person.id)}
-                    title="View Profile"
                   >
                     <EyeIcon className="w-4 h-4" />
                   </Button>
@@ -411,7 +407,6 @@ const PeopleTable: React.FC<PeopleTableProps> = ({
                     variant="outline"
                     size="sm"
                     onClick={() => onQuickAction('more', person.id)}
-                    title="More Actions"
                   >
                     <MoreDotIcon className="w-4 h-4" />
                   </Button>
