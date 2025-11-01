@@ -177,6 +177,7 @@ export interface Campaign {
   deliverables: Deliverable[];
   
   // Progress
+  progress: number;
   progressPercent: number;
   completedDeliverables: number;
   totalDeliverables: number;

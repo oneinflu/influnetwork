@@ -9,13 +9,13 @@ import {
   HorizontaLDots,
  
   PieChartIcon,
-  PlugInIcon,
+ 
   TableIcon,
   UserCircleIcon,
   GroupIcon,
   FolderIcon,
   DollarLineIcon,
-  TaskIcon,
+ 
   DocsIcon,
   BoltIcon,
   InfoIcon,
@@ -68,14 +68,7 @@ const businessItems: NavItem[] = [
     name: "Invoices & Payments",
     path: "/invoices-payments",
   },
-  {
-    icon: <TaskIcon />,
-    name: "Tasks & Calendar",
-    subItems: [
-      { name: "Tasks", path: "/tasks", pro: false },
-      { name: "Calendar", path: "/calendar", pro: false },
-    ],
-  },
+  
   {
     icon: <TableIcon />,
     name: "Reports & Insights",
@@ -86,11 +79,7 @@ const businessItems: NavItem[] = [
 
 
 const systemItems: NavItem[] = [
-  {
-    icon: <PlugInIcon />,
-    name: "Tools & Integrations",
-    path: "/tools-integrations",
-  },
+ 
   {
     icon: <UserCircleIcon />,
     name: "Settings",
