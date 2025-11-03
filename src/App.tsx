@@ -35,6 +35,8 @@ import Messages from "./pages/Messages";
 import ToolsIntegrations from "./pages/ToolsIntegrations";
 import Settings from "./pages/Settings";
 import HelpSupport from "./pages/HelpSupport";
+import ProfileEdit from "./pages/ProfileEdit";
+import AccountSettings from "./pages/AccountSettings";
 
 export default function App() {
   return (
@@ -67,6 +69,8 @@ export default function App() {
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
+            <Route path="/profile/edit" element={<ProfileEdit />} />
+            <Route path="/account-settings" element={<AccountSettings />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/blank" element={<Blank />} />
 
